@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pos/core/localization/translation_key_manager.dart';
 import 'package:pos/core/resources_manager/color_manager.dart';
 import 'package:pos/core/resources_manager/style_manager.dart';
 
@@ -14,7 +16,7 @@ class AllRightsSaved extends StatelessWidget {
         const Spacer(),
         const SizedBox(height: 20,),
         Text(
-          'جميع الحقوق محفوظة ©️ 2024',
+          '${TranslationKeyManager.allRightsReserved.tr} ©️ 2024',
           style: TextStyleManager.textStyleRegular.copyWith(
             fontSize: 14,
             color: ColorsManager.grey2,

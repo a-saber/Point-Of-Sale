@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pos/core/localization/translation_key_manager.dart';
 import 'package:pos/core/resources_manager/assets_manager.dart';
 import 'package:pos/core/resources_manager/color_manager.dart';
 import 'package:pos/core/resources_manager/style_manager.dart';
@@ -40,7 +41,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                     const NameLogo(),
                     const SizedBox(height: 20),
                     Text(
-                      'تغيير كلمة السر',
+                      TranslationKeyManager.changePassword.tr,
                       style: TextStyleManager.textStyleBold.copyWith(
                         fontSize: 24,
                         color: ColorsManager.black,
@@ -48,7 +49,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                     ),
                     const SizedBox(height: 40),
                     FormItemBuilder(
-                      label: 'كلمة المرور',
+                      label: TranslationKeyManager.newPassword.tr,
                       isRequired: true,
                       controller: passwordController,
                       textInputType: TextInputType.text,
@@ -62,7 +63,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                     ),
                     const SizedBox(height: 20),
                     FormItemBuilder(
-                      label: 'تاكيد كلمة المرور',
+                      label: TranslationKeyManager.confirmPassword.tr,
                       isRequired: true,
                       controller: confirmPasswordController,
                       textInputType: TextInputType.text,
@@ -76,7 +77,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                     ),
                     const SizedBox(height: 40),
                     FormButton(
-                      label: 'تحديث كلمة المرور',
+                      label: TranslationKeyManager.save.tr,
                       onPressed: ()
                       {
                         formKey.currentState!.validate();

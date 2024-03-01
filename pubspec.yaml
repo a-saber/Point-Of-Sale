@@ -41,6 +41,8 @@ dependencies:
   dio: ^5.4.1
   shared_preferences: ^2.2.2
   get_it: ^7.6.7
+  flutter_staggered_animations: ^1.1.1
+  awesome_icons: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -72,16 +74,28 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: Almarai
+    - family: Cairo
       fonts:
-        - asset: assets/fonts/Almarai-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/Almarai-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Almarai-Light.ttf
+        - asset: assets/fonts/Cairo-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Cairo-Light.ttf
           weight: 300
-        - asset: assets/fonts/Almarai-Regular.ttf
+        - asset: assets/fonts/Cairo-Regular.ttf
           weight: 400
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Cairo-Black.ttf
+          weight: 900
+
+
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

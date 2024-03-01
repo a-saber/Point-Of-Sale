@@ -4,6 +4,9 @@ import 'package:pos/core/resources_manager/constants_manager.dart';
 import 'package:pos/core/resources_manager/theme_manager.dart';
 import 'package:pos/features/authentication/presentation/views/login_view.dart';
 
+import '../cache_helper/cache_data.dart';
+import '../localization/app_localization.dart';
+
 class MyApp extends StatelessWidget {
 
   const MyApp._internal();
@@ -14,9 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeManager.light,
-      title: ConstantsManager.appTitle,
+      title: 'POS',
       debugShowCheckedModeBanner: false,
-      locale: Locale('ar'),
+      locale: Locale(CacheData.lang!),
+      translations: AppLocalization(),
       home: const LoginView(),
 
     );

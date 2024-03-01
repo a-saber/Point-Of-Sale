@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pos/core/localization/translation_key_manager.dart';
 import 'package:pos/core/resources_manager/color_manager.dart';
 import 'package:pos/core/resources_manager/style_manager.dart';
 
@@ -8,7 +10,7 @@ class Hello extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'أهلا وسهلا بك 👋',
+      '${TranslationKeyManager.welcome.tr} 👋',
       style: TextStyleManager.textStyleLight.copyWith(
         fontSize: 16,
         color: ColorsManager.grey,

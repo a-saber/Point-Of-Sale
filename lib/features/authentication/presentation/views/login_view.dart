@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pos/core/localization/translation_key_manager.dart';
 import 'package:pos/core/resources_manager/assets_manager.dart';
 import 'package:pos/core/resources_manager/color_manager.dart';
 import 'package:pos/core/resources_manager/delay_manager.dart';
@@ -7,6 +8,7 @@ import 'package:pos/core/resources_manager/style_manager.dart';
 import 'package:pos/core/shared_widgets/form/form_button.dart';
 import 'package:pos/core/shared_widgets/form/form_item_builder.dart';
 import 'package:pos/features/authentication/presentation/views/widgets/auth_view_builder.dart';
+import 'package:pos/features/home/presentation/views/home_view.dart';
 
 import 'change_pass_view.dart';
 import 'register_view.dart';
@@ -41,7 +43,7 @@ class _LoginViewState extends State<LoginView> {
                   const NameLogo(),
                   const SizedBox(height: 20),
                   Text(
-                    'تسجيل الدخول',
+                    TranslationKeyManager.loginToAccount.tr,
                     style: TextStyleManager.textStyleBold.copyWith(
                       fontSize: 24,
                       color: ColorsManager.black,
@@ -51,14 +53,14 @@ class _LoginViewState extends State<LoginView> {
                   const Hello(),
                   const SizedBox(height: 40),
                   FormItemBuilder(
-                    label: 'البريد الإلكتروني',
+                    label: TranslationKeyManager.email.tr,
                     isRequired: true,
                     controller: emailController,
                     textInputType: TextInputType.emailAddress,
                   ),
                   const SizedBox(height: 20),
                   FormItemBuilder(
-                    label: 'كلمة المرور',
+                    label: TranslationKeyManager.password.tr,
                     isRequired: true,
                     controller: passwordController,
                     textInputType: TextInputType.text,
@@ -82,7 +84,7 @@ class _LoginViewState extends State<LoginView> {
                         );
                       },
                       child: Text(
-                        'هل نسيت كلمة السر؟',
+                        TranslationKeyManager.forgetPassword.tr,
                         style: TextStyleManager.textStyleRegular.copyWith(
                           fontSize: 14,
                           color: ColorsManager.grey2,
@@ -92,10 +94,17 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   const SizedBox(height: 40),
                   FormButton(
-                    label: 'تسجيل الدخول',
+                    label: TranslationKeyManager.login.tr,
                     onPressed: ()
                     {
-                      formKey.currentState!.validate();
+                      if(formKey.currentState!.validate())
+                      {
+                        Get.off(
+                              () => const HomeView(),
+                          transition: DelayManager.transitionLeftToRight,
+                          duration: const Duration(milliseconds: 750),
+                        );
+                      }
                     },
                   ),
                   const SizedBox(height: 10),
@@ -104,7 +113,7 @@ class _LoginViewState extends State<LoginView> {
                     children:
                     [
                       Text(
-                        'لا تملك حساب؟',
+                        TranslationKeyManager.doNotHaveAccount.tr,
                         style: TextStyleManager.textStyleRegular.copyWith(
                           fontSize: 14,
                           color: ColorsManager.grey2,
@@ -120,7 +129,7 @@ class _LoginViewState extends State<LoginView> {
                           );
                         },
                         child: Text(
-                          'أنشئ حسابك الآن',
+                          TranslationKeyManager.registerNow.tr,
                           style: TextStyleManager.textStyleBold.copyWith(
                             fontSize: 14,
                             color: ColorsManager.primary,

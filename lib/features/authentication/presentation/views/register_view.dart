@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pos/core/localization/translation_key_manager.dart';
 import 'package:pos/core/resources_manager/assets_manager.dart';
 import 'package:pos/core/resources_manager/color_manager.dart';
 import 'package:pos/core/resources_manager/delay_manager.dart';
@@ -45,7 +46,7 @@ class _RegisterViewState extends State<RegisterView> {
                     const NameLogo(),
                     const SizedBox(height: 20),
                     Text(
-                      'انشاء حساب جديد',
+                      TranslationKeyManager.createAnAccount.tr,
                       style: TextStyleManager.textStyleBold.copyWith(
                         fontSize: 24,
                         color: ColorsManager.black,
@@ -55,21 +56,21 @@ class _RegisterViewState extends State<RegisterView> {
                     const Hello(),
                     const SizedBox(height: 40),
                     FormItemBuilder(
-                      label: 'الاسم بالكامل',
+                      label: TranslationKeyManager.fullName.tr,
                       isRequired: true,
                       controller: nameController,
                       textInputType: TextInputType.text,
                     ),
                     const SizedBox(height: 20),
                     FormItemBuilder(
-                      label: 'البريد الإلكتروني',
+                      label: TranslationKeyManager.email.tr,
                       isRequired: true,
                       controller: emailController,
                       textInputType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 20),
                     FormItemBuilder(
-                      label: 'كلمة المرور',
+                      label: TranslationKeyManager.password.tr,
                       isRequired: true,
                       controller: passwordController,
                       textInputType: TextInputType.text,
@@ -83,7 +84,7 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                     const SizedBox(height: 20),
                     FormItemBuilder(
-                      label: 'تاكيد كلمة المرور',
+                      label: TranslationKeyManager.confirmPassword.tr,
                       isRequired: true,
                       controller: confirmPasswordController,
                       textInputType: TextInputType.text,
@@ -97,7 +98,7 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                     const SizedBox(height: 40),
                     FormButton(
-                      label: 'انشاء حساب جديد',
+                      label: TranslationKeyManager.register.tr,
                       onPressed: ()
                       {
                         formKey.currentState!.validate();
@@ -109,7 +110,7 @@ class _RegisterViewState extends State<RegisterView> {
                       children:
                       [
                         Text(
-                          'تمتلك حساب؟',
+                          TranslationKeyManager.alreadyHaveAccount.tr,
                           style: TextStyleManager.textStyleRegular.copyWith(
                             fontSize: 14,
                             color: ColorsManager.grey2,
@@ -124,7 +125,7 @@ class _RegisterViewState extends State<RegisterView> {
                             duration: const Duration(milliseconds: 750),);
                           },
                           child: Text(
-                            'تسجيل الدخول',
+                            TranslationKeyManager.loginNow.tr,
                             style: TextStyleManager.textStyleBold.copyWith(
                               fontSize: 14,
                               color: ColorsManager.primary,
